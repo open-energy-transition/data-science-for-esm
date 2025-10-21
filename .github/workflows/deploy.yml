@@ -30,7 +30,7 @@ jobs:
     - uses: conda-incubator/setup-miniconda@v3
       with:
         miniforge-version: latest
-        activate-environment: open-tyndp-workshops
+        activate-environment: esm-ws-24-25
         channel-priority: strict
 
     - name: Cache Conda env
@@ -42,7 +42,7 @@ jobs:
 
     - name: Update environment
       run: |
-        conda env update -n open-tyndp-workshops -f environment.yaml
+        conda env update -n esm-ws-24-25 -f environment.yaml
         echo "Run conda list" && conda list
 
     # Build the book
