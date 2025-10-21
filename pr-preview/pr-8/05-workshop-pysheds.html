@@ -484,7 +484,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;output_COP30.tif&#39;, &lt;http.client.HTTPMessage at 0x7f43209d2d80&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;output_COP30.tif&#39;, &lt;http.client.HTTPMessage at 0x7faef0355df0&gt;)
 </pre></div>
 </div>
 </div>
@@ -496,335 +496,6 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pysheds.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pysheds.grid</span><span class="w"> </span><span class="kn">import</span> <span class="n">Grid</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">esm</span><span class="o">-</span><span class="n">ws</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">25</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pysheds</span><span class="o">/</span><span class="n">grid</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">7</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">_HAS_NUMBA</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">if</span> <span class="n">_HAS_NUMBA</span><span class="p">:</span>
-<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">pysheds.sgrid</span><span class="w"> </span><span class="kn">import</span> <span class="n">sGrid</span> <span class="k">as</span> <span class="n">Grid</span>  <span class="c1"># noqa: F401</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s1">&#39;Missing required dependency `numba`.&#39;</span><span class="p">)</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">esm</span><span class="o">-</span><span class="n">ws</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">25</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pysheds</span><span class="o">/</span><span class="n">sgrid</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">32</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> <span class="kn">from</span><span class="w"> </span><span class="nn">pysheds.sview</span><span class="w"> </span><span class="kn">import</span> <span class="n">View</span><span class="p">,</span> <span class="n">ViewFinder</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="c1"># Import numba functions</span>
-<span class="ne">---&gt; </span><span class="mi">32</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pysheds._sgrid</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_self</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.</span><span class="w"> </span><span class="kn">import</span> <span class="n">projection</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">class</span><span class="w"> </span><span class="nc">sGrid</span><span class="p">():</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">esm</span><span class="o">-</span><span class="n">ws</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="mi">25</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pysheds</span><span class="o">/</span><span class="n">_sgrid</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1762</span>
-<span class="g g-Whitespace">   </span><span class="mi">1759</span>     <span class="k">return</span> <span class="n">flat_fdir</span>
-<span class="g g-Whitespace">   </span><span class="mi">1761</span> <span class="c1"># TODO: Assumes pits and flats are removed</span>
-<span class="ne">-&gt; </span><span class="mi">1762</span> <span class="nd">@njit</span><span class="p">(</span><span class="n">int64</span><span class="p">[:,:,:](</span><span class="n">float64</span><span class="p">[:,:,:]),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1763</span>       <span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1764</span>       <span class="n">cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1765</span> <span class="k">def</span><span class="w"> </span><span class="nf">_flatten_mfd_fdir_numba</span><span class="p">(</span><span class="n">fdir</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1766</span>     <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">fdir</span><span class="o">.</span><span class="n">shape</span>
-<span class="g g-Whitespace">   </span><span class="mi">1767</span>     <span class="n">n</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">c</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/decorators.py:234,</span> in <span class="ni">_jit.&lt;locals&gt;.wrapper</span><span class="nt">(func)</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="k">with</span> <span class="n">typeinfer</span><span class="o">.</span><span class="n">register_dispatcher</span><span class="p">(</span><span class="n">disp</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>         <span class="k">for</span> <span class="n">sig</span> <span class="ow">in</span> <span class="n">sigs</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">234</span>             <span class="n">disp</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>         <span class="n">disp</span><span class="o">.</span><span class="n">disable_compile</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="k">return</span> <span class="n">disp</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/dispatcher.py:908,</span> in <span class="ni">Dispatcher.compile</span><span class="nt">(self, sig)</span>
-<span class="g g-Whitespace">    </span><span class="mi">906</span> <span class="k">with</span> <span class="n">ev</span><span class="o">.</span><span class="n">trigger_event</span><span class="p">(</span><span class="s2">&quot;numba:compile&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">ev_details</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">907</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">908</span>         <span class="n">cres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compiler</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">909</span>     <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">ForceLiteralArg</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">910</span>         <span class="k">def</span><span class="w"> </span><span class="nf">folded</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kws</span><span class="p">):</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/dispatcher.py:80,</span> in <span class="ni">_FunctionCompiler.compile</span><span class="nt">(self, args, return_type)</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="k">def</span><span class="w"> </span><span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">80</span>     <span class="n">status</span><span class="p">,</span> <span class="n">retval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_cached</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="k">if</span> <span class="n">status</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span>         <span class="k">return</span> <span class="n">retval</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/dispatcher.py:94,</span> in <span class="ni">_FunctionCompiler._compile_cached</span><span class="nt">(self, args, return_type)</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>     <span class="k">pass</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">94</span>     <span class="n">retval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_core</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span> <span class="k">except</span> <span class="n">errors</span><span class="o">.</span><span class="n">TypingError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_failed_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">e</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/dispatcher.py:107,</span> in <span class="ni">_FunctionCompiler._compile_core</span><span class="nt">(self, args, return_type)</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span> <span class="n">flags</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_customize_flags</span><span class="p">(</span><span class="n">flags</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="n">impl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_implementation</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="p">{})</span>
-<span class="ne">--&gt; </span><span class="mi">107</span> <span class="n">cres</span> <span class="o">=</span> <span class="n">compiler</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">targetdescr</span><span class="o">.</span><span class="n">typing_context</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>                               <span class="bp">self</span><span class="o">.</span><span class="n">targetdescr</span><span class="o">.</span><span class="n">target_context</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>                               <span class="n">impl</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>                               <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="n">return_type</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>                               <span class="n">flags</span><span class="o">=</span><span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">locals</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>                               <span class="n">pipeline_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pipeline_class</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="c1"># Check typing error if object mode is used</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="k">if</span> <span class="n">cres</span><span class="o">.</span><span class="n">typing_error</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">flags</span><span class="o">.</span><span class="n">enable_pyobject</span><span class="p">:</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler.py:739,</span> in <span class="ni">compile_extra</span><span class="nt">(typingctx, targetctx, func, args, return_type, flags, locals, library, pipeline_class)</span>
-<span class="g g-Whitespace">    </span><span class="mi">715</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Compiler entry point</span>
-<span class="g g-Whitespace">    </span><span class="mi">716</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">717</span><span class="sd"> Parameter</span>
-<span class="sd">   (...)    735     compiler pipeline</span>
-<span class="g g-Whitespace">    </span><span class="mi">736</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">737</span> <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pipeline_class</span><span class="p">(</span><span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">738</span>                           <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">739</span> <span class="k">return</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">compile_extra</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler.py:439,</span> in <span class="ni">CompilerBase.compile_extra</span><span class="nt">(self, func)</span>
-<span class="g g-Whitespace">    </span><span class="mi">437</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted</span> <span class="o">=</span> <span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">438</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">lifted_from</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">439</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_bytecode</span><span class="p">()</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler.py:505,</span> in <span class="ni">CompilerBase._compile_bytecode</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">501</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">502</span><span class="sd"> Populate and run pipeline for bytecode input</span>
-<span class="g g-Whitespace">    </span><span class="mi">503</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">504</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">func_ir</span> <span class="ow">is</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">505</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_core</span><span class="p">()</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler.py:473,</span> in <span class="ni">CompilerBase._compile_core</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span> <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">473</span>     <span class="n">pm</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">cr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>         <span class="k">break</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler_machinery.py:356,</span> in <span class="ni">PassManager.run</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">354</span> <span class="n">pass_inst</span> <span class="o">=</span> <span class="n">_pass_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pss</span><span class="p">)</span><span class="o">.</span><span class="n">pass_inst</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pass_inst</span><span class="p">,</span> <span class="n">CompilerPass</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">356</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_runPass</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">pass_inst</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="k">raise</span> <span class="ne">BaseException</span><span class="p">(</span><span class="s2">&quot;Legacy pass in use&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler_lock.py:35,</span> in <span class="ni">_CompilerLock.__call__.&lt;locals&gt;._acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="k">def</span><span class="w"> </span><span class="nf">_acquire_compile_lock</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="k">with</span> <span class="bp">self</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">35</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler_machinery.py:311,</span> in <span class="ni">PassManager._runPass</span><span class="nt">(self, index, pss, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>     <span class="n">mutated</span> <span class="o">|=</span> <span class="n">check</span><span class="p">(</span><span class="n">pss</span><span class="o">.</span><span class="n">run_initialization</span><span class="p">,</span> <span class="n">internal_state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="k">with</span> <span class="n">SimpleTimer</span><span class="p">()</span> <span class="k">as</span> <span class="n">pass_time</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">311</span>     <span class="n">mutated</span> <span class="o">|=</span> <span class="n">check</span><span class="p">(</span><span class="n">pss</span><span class="o">.</span><span class="n">run_pass</span><span class="p">,</span> <span class="n">internal_state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span> <span class="k">with</span> <span class="n">SimpleTimer</span><span class="p">()</span> <span class="k">as</span> <span class="n">finalize_time</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>     <span class="n">mutated</span> <span class="o">|=</span> <span class="n">check</span><span class="p">(</span><span class="n">pss</span><span class="o">.</span><span class="n">run_finalizer</span><span class="p">,</span> <span class="n">internal_state</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler_machinery.py:272,</span> in <span class="ni">PassManager._runPass.&lt;locals&gt;.check</span><span class="nt">(func, compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">def</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">compiler_state</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="n">mangled</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">compiler_state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="k">if</span> <span class="n">mangled</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">274</span>         <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;CompilerPass implementations should return True/False. &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span>                <span class="s2">&quot;CompilerPass with name &#39;</span><span class="si">%s</span><span class="s2">&#39; did not.&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/typed_passes.py:470,</span> in <span class="ni">BaseNativeLowering.run_pass</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">with</span> <span class="n">targetctx</span><span class="o">.</span><span class="n">push_code_library</span><span class="p">(</span><span class="n">library</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="n">lower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lowering_class</span><span class="p">(</span><span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span> <span class="n">fndesc</span><span class="p">,</span> <span class="n">interp</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span>                                 <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">470</span>     <span class="n">lower</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">flags</span><span class="o">.</span><span class="n">no_cpython_wrapper</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span>         <span class="n">lower</span><span class="o">.</span><span class="n">create_cpython_wrapper</span><span class="p">(</span><span class="n">flags</span><span class="o">.</span><span class="n">release_gil</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:193,</span> in <span class="ni">BaseLower.lower</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">generator_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span>     <span class="bp">self</span><span class="o">.</span><span class="n">genlower</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">193</span>     <span class="bp">self</span><span class="o">.</span><span class="n">lower_normal_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fndesc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="bp">self</span><span class="o">.</span><span class="n">genlower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GeneratorLower</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:232,</span> in <span class="ni">BaseLower.lower_normal_function</span><span class="nt">(self, fndesc)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="c1"># Init argument values</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_function_arguments</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">232</span> <span class="n">entry_block_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lower_function_body</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="c1"># Close tail of entry block, do not emit debug metadata else the</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="c1"># unconditional jump gets associated with the metadata from the function</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="c1"># body end.</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">with</span> <span class="n">debuginfo</span><span class="o">.</span><span class="n">suspend_emission</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="p">):</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:262,</span> in <span class="ni">BaseLower.lower_function_body</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span>     <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">position_at_end</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="bp">self</span><span class="o">.</span><span class="n">debug_print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# lower block: </span><span class="si">{</span><span class="n">offset</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">262</span>     <span class="bp">self</span><span class="o">.</span><span class="n">lower_block</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="bp">self</span><span class="o">.</span><span class="n">post_lower</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">264</span> <span class="k">return</span> <span class="n">entry_block_tail</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:276,</span> in <span class="ni">BaseLower.lower_block</span><span class="nt">(self, block)</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="n">defaulterrcls</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">LoweringError</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">loc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="k">with</span> <span class="n">new_error_context</span><span class="p">(</span><span class="s1">&#39;lowering &quot;</span><span class="si">{inst}</span><span class="s1">&quot; at </span><span class="si">{loc}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">inst</span><span class="o">=</span><span class="n">inst</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span>                            <span class="n">loc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">loc</span><span class="p">,</span> <span class="n">errcls_</span><span class="o">=</span><span class="n">defaulterrcls</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">276</span>         <span class="bp">self</span><span class="o">.</span><span class="n">lower_inst</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="bp">self</span><span class="o">.</span><span class="n">post_block</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/parfors/parfor_lowering.py:52,</span> in <span class="ni">ParforLower.lower_inst</span><span class="nt">(self, inst)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">def</span><span class="w"> </span><span class="nf">lower_inst</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">parfor</span><span class="o">.</span><span class="n">Parfor</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">52</span>         <span class="n">_lower_parfor_parallel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">54</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">lower_inst</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/parfors/parfor_lowering.py:68,</span> in <span class="ni">_lower_parfor_parallel</span><span class="nt">(lowerer, parfor)</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="k">def</span><span class="w"> </span><span class="nf">_lower_parfor_parallel</span><span class="p">(</span><span class="n">lowerer</span><span class="p">,</span> <span class="n">parfor</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="k">if</span> <span class="n">parfor</span><span class="o">.</span><span class="n">lowerer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">68</span>         <span class="k">return</span> <span class="n">_lower_parfor_parallel_std</span><span class="p">(</span><span class="n">lowerer</span><span class="p">,</span> <span class="n">parfor</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="k">return</span> <span class="n">parfor</span><span class="o">.</span><span class="n">lowerer</span><span class="p">(</span><span class="n">lowerer</span><span class="p">,</span> <span class="n">parfor</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/parfors/parfor_lowering.py:350,</span> in <span class="ni">_lower_parfor_parallel_std</span><span class="nt">(lowerer, parfor)</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span> <span class="n">numba</span><span class="o">.</span><span class="n">parfors</span><span class="o">.</span><span class="n">parfor</span><span class="o">.</span><span class="n">sequential_parfor_lowering</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span>     <span class="p">(</span><span class="n">func</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span>      <span class="n">func_args</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">348</span>      <span class="n">func_sig</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">349</span>      <span class="n">func_arg_types</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">350</span>      <span class="n">exp_name_to_tuple_var</span><span class="p">)</span> <span class="o">=</span> <span class="n">_create_gufunc_for_parfor_body</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">351</span>         <span class="n">lowerer</span><span class="p">,</span> <span class="n">parfor</span><span class="p">,</span> <span class="n">typemap</span><span class="p">,</span> <span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="p">{},</span>
-<span class="g g-Whitespace">    </span><span class="mi">352</span>         <span class="nb">bool</span><span class="p">(</span><span class="n">alias_map</span><span class="p">),</span> <span class="n">index_var_typ</span><span class="p">,</span> <span class="n">parfor</span><span class="o">.</span><span class="n">races</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">353</span> <span class="k">finally</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">354</span>     <span class="n">numba</span><span class="o">.</span><span class="n">parfors</span><span class="o">.</span><span class="n">parfor</span><span class="o">.</span><span class="n">sequential_parfor_lowering</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/parfors/parfor_lowering.py:1609,</span> in <span class="ni">_create_gufunc_for_parfor_body</span><span class="nt">(lowerer, parfor, typemap, typingctx, targetctx, flags, locals, has_aliases, index_var_typ, races)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1606</span>         <span class="n">pm</span><span class="o">.</span><span class="n">finalize</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1607</span>         <span class="k">return</span> <span class="p">[</span><span class="n">pm</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">1609</span> <span class="n">kernel_func</span> <span class="o">=</span> <span class="n">compiler</span><span class="o">.</span><span class="n">compile_ir</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1610</span>     <span class="n">typingctx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1611</span>     <span class="n">targetctx</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1612</span>     <span class="n">gufunc_ir</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1613</span>     <span class="n">gufunc_param_types</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1614</span>     <span class="n">types</span><span class="o">.</span><span class="n">none</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1615</span>     <span class="n">flags</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1616</span>     <span class="nb">locals</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="n">pipeline_class</span><span class="o">=</span><span class="n">ParforGufuncCompiler</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="n">flags</span><span class="o">.</span><span class="n">noalias</span> <span class="o">=</span> <span class="n">old_alias</span>
-<span class="g g-Whitespace">   </span><span class="mi">1621</span> <span class="n">kernel_sig</span> <span class="o">=</span> <span class="n">signature</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">none</span><span class="p">,</span> <span class="o">*</span><span class="n">gufunc_param_types</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler.py:802,</span> in <span class="ni">compile_ir</span><span class="nt">(typingctx, targetctx, func_ir, args, return_type, flags, locals, lifted, lifted_from, is_lifted_loop, library, pipeline_class)</span>
-<span class="g g-Whitespace">    </span><span class="mi">799</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">800</span>     <span class="n">pipeline</span> <span class="o">=</span> <span class="n">pipeline_class</span><span class="p">(</span><span class="n">typingctx</span><span class="p">,</span> <span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">801</span>                               <span class="n">args</span><span class="p">,</span> <span class="n">return_type</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">802</span>     <span class="k">return</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">compile_ir</span><span class="p">(</span><span class="n">func_ir</span><span class="o">=</span><span class="n">func_ir</span><span class="p">,</span> <span class="n">lifted</span><span class="o">=</span><span class="n">lifted</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">803</span>                                <span class="n">lifted_from</span><span class="o">=</span><span class="n">lifted_from</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler.py:449,</span> in <span class="ni">CompilerBase.compile_ir</span><span class="nt">(self, func_ir, lifted, lifted_from)</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">nargs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">func_ir</span><span class="o">.</span><span class="n">arg_count</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span> <span class="n">FixupArgs</span><span class="p">()</span><span class="o">.</span><span class="n">run_pass</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">449</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_ir</span><span class="p">()</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler.py:512,</span> in <span class="ni">CompilerBase._compile_ir</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">508</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">509</span><span class="sd"> Populate and run pipeline for IR input</span>
-<span class="g g-Whitespace">    </span><span class="mi">510</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">511</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">func_ir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">512</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_core</span><span class="p">()</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler.py:473,</span> in <span class="ni">CompilerBase._compile_core</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span> <span class="n">res</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">473</span>     <span class="n">pm</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">cr</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>         <span class="k">break</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler_machinery.py:356,</span> in <span class="ni">PassManager.run</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">354</span> <span class="n">pass_inst</span> <span class="o">=</span> <span class="n">_pass_registry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pss</span><span class="p">)</span><span class="o">.</span><span class="n">pass_inst</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pass_inst</span><span class="p">,</span> <span class="n">CompilerPass</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">356</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_runPass</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">pass_inst</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">358</span>     <span class="k">raise</span> <span class="ne">BaseException</span><span class="p">(</span><span class="s2">&quot;Legacy pass in use&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler_lock.py:35,</span> in <span class="ni">_CompilerLock.__call__.&lt;locals&gt;._acquire_compile_lock</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="k">def</span><span class="w"> </span><span class="nf">_acquire_compile_lock</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">34</span>     <span class="k">with</span> <span class="bp">self</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">35</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler_machinery.py:311,</span> in <span class="ni">PassManager._runPass</span><span class="nt">(self, index, pss, internal_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>     <span class="n">mutated</span> <span class="o">|=</span> <span class="n">check</span><span class="p">(</span><span class="n">pss</span><span class="o">.</span><span class="n">run_initialization</span><span class="p">,</span> <span class="n">internal_state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span> <span class="k">with</span> <span class="n">SimpleTimer</span><span class="p">()</span> <span class="k">as</span> <span class="n">pass_time</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">311</span>     <span class="n">mutated</span> <span class="o">|=</span> <span class="n">check</span><span class="p">(</span><span class="n">pss</span><span class="o">.</span><span class="n">run_pass</span><span class="p">,</span> <span class="n">internal_state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span> <span class="k">with</span> <span class="n">SimpleTimer</span><span class="p">()</span> <span class="k">as</span> <span class="n">finalize_time</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">313</span>     <span class="n">mutated</span> <span class="o">|=</span> <span class="n">check</span><span class="p">(</span><span class="n">pss</span><span class="o">.</span><span class="n">run_finalizer</span><span class="p">,</span> <span class="n">internal_state</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/compiler_machinery.py:272,</span> in <span class="ni">PassManager._runPass.&lt;locals&gt;.check</span><span class="nt">(func, compiler_state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">def</span><span class="w"> </span><span class="nf">check</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">compiler_state</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="n">mangled</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">compiler_state</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="k">if</span> <span class="n">mangled</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">274</span>         <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;CompilerPass implementations should return True/False. &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span>                <span class="s2">&quot;CompilerPass with name &#39;</span><span class="si">%s</span><span class="s2">&#39; did not.&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/typed_passes.py:470,</span> in <span class="ni">BaseNativeLowering.run_pass</span><span class="nt">(self, state)</span>
-<span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">with</span> <span class="n">targetctx</span><span class="o">.</span><span class="n">push_code_library</span><span class="p">(</span><span class="n">library</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span>     <span class="n">lower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lowering_class</span><span class="p">(</span><span class="n">targetctx</span><span class="p">,</span> <span class="n">library</span><span class="p">,</span> <span class="n">fndesc</span><span class="p">,</span> <span class="n">interp</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span>                                 <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">470</span>     <span class="n">lower</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">471</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">flags</span><span class="o">.</span><span class="n">no_cpython_wrapper</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span>         <span class="n">lower</span><span class="o">.</span><span class="n">create_cpython_wrapper</span><span class="p">(</span><span class="n">flags</span><span class="o">.</span><span class="n">release_gil</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:193,</span> in <span class="ni">BaseLower.lower</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">generator_info</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">192</span>     <span class="bp">self</span><span class="o">.</span><span class="n">genlower</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">193</span>     <span class="bp">self</span><span class="o">.</span><span class="n">lower_normal_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fndesc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span>     <span class="bp">self</span><span class="o">.</span><span class="n">genlower</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">GeneratorLower</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:232,</span> in <span class="ni">BaseLower.lower_normal_function</span><span class="nt">(self, fndesc)</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span> <span class="c1"># Init argument values</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_function_arguments</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">232</span> <span class="n">entry_block_tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lower_function_body</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span> <span class="c1"># Close tail of entry block, do not emit debug metadata else the</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span> <span class="c1"># unconditional jump gets associated with the metadata from the function</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="c1"># body end.</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span> <span class="k">with</span> <span class="n">debuginfo</span><span class="o">.</span><span class="n">suspend_emission</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="p">):</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:262,</span> in <span class="ni">BaseLower.lower_function_body</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span>     <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">position_at_end</span><span class="p">(</span><span class="n">bb</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="bp">self</span><span class="o">.</span><span class="n">debug_print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# lower block: </span><span class="si">{</span><span class="n">offset</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">262</span>     <span class="bp">self</span><span class="o">.</span><span class="n">lower_block</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="bp">self</span><span class="o">.</span><span class="n">post_lower</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">264</span> <span class="k">return</span> <span class="n">entry_block_tail</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:276,</span> in <span class="ni">BaseLower.lower_block</span><span class="nt">(self, block)</span>
-<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="n">defaulterrcls</span> <span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">LoweringError</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">loc</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">274</span>     <span class="k">with</span> <span class="n">new_error_context</span><span class="p">(</span><span class="s1">&#39;lowering &quot;</span><span class="si">{inst}</span><span class="s1">&quot; at </span><span class="si">{loc}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">inst</span><span class="o">=</span><span class="n">inst</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">275</span>                            <span class="n">loc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">loc</span><span class="p">,</span> <span class="n">errcls_</span><span class="o">=</span><span class="n">defaulterrcls</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">276</span>         <span class="bp">self</span><span class="o">.</span><span class="n">lower_inst</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">277</span> <span class="bp">self</span><span class="o">.</span><span class="n">post_block</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/parfors/parfor_lowering.py:54,</span> in <span class="ni">ParforLower.lower_inst</span><span class="nt">(self, inst)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="n">_lower_parfor_parallel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">54</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">lower_inst</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:561,</span> in <span class="ni">Lower.lower_inst</span><span class="nt">(self, inst)</span>
-<span class="g g-Whitespace">    </span><span class="mi">558</span>     <span class="k">return</span> <span class="n">impl</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="p">,</span> <span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">560</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">ir</span><span class="o">.</span><span class="n">Del</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">561</span>     <span class="bp">self</span><span class="o">.</span><span class="n">delvar</span><span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">563</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">inst</span><span class="p">,</span> <span class="n">ir</span><span class="o">.</span><span class="n">SetAttr</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span>     <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">loadvar</span><span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/lowering.py:1599,</span> in <span class="ni">Lower.delvar</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1597</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1598</span>     <span class="n">ptr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getvar</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1599</span>     <span class="bp">self</span><span class="o">.</span><span class="n">decref</span><span class="p">(</span><span class="n">fetype</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ptr</span><span class="p">))</span>
-<span class="g g-Whitespace">   </span><span class="mi">1600</span>     <span class="c1"># Zero-fill variable to avoid double frees on subsequent dels</span>
-<span class="g g-Whitespace">   </span><span class="mi">1601</span>     <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">store</span><span class="p">(</span><span class="n">Constant</span><span class="p">(</span><span class="n">ptr</span><span class="o">.</span><span class="n">type</span><span class="o">.</span><span class="n">pointee</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">ptr</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/llvmlite/ir/builder.py:756,</span> in <span class="ni">IRBuilder.load</span><span class="nt">(self, ptr, name, align, typ)</span>
-<span class="g g-Whitespace">    </span><span class="mi">753</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_insert</span><span class="p">(</span><span class="n">al</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">754</span>     <span class="k">return</span> <span class="n">al</span>
-<span class="ne">--&gt; </span><span class="mi">756</span> <span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">757</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">758</span><span class="sd">     Load value from pointer, with optional guaranteed alignment:</span>
-<span class="g g-Whitespace">    </span><span class="mi">759</span><span class="sd">         name = *ptr</span>
-<span class="g g-Whitespace">    </span><span class="mi">760</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">761</span>     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ptr</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">PointerType</span><span class="p">):</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -869,6 +540,12 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fae7bab1f40&gt;
+</pre></div>
+</div>
+<img alt="_images/261ed0136af383b135491f1a46856b35def8b5e34be7de4eeeff97e76d26b006.png" src="_images/261ed0136af383b135491f1a46856b35def8b5e34be7de4eeeff97e76d26b006.png" />
+</div>
 </div>
 </section>
 <section id="conditioning-the-elevation-data">
@@ -890,6 +567,53 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flooded_dem</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fill_depressions</span><span class="p">(</span><span class="n">pit_filled_dem</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/serialize.py:30,</span> in <span class="ni">_numba_unpickle</span><span class="nt">(address, bytedata, hashed)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">_unpickled_memo</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="ne">---&gt; </span><span class="mi">30</span> <span class="k">def</span><span class="w"> </span><span class="nf">_numba_unpickle</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">bytedata</span><span class="p">,</span> <span class="n">hashed</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Used by `numba_unpickle` from _helperlib.c</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd">     Parameters</span>
+<span class="sd">   (...)     42         unpickled object</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span><span class="sd">     &quot;&quot;&quot;</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+
+<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
+
+<span class="ne">SystemError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">flooded_dem</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fill_depressions</span><span class="p">(</span><span class="n">pit_filled_dem</span><span class="p">)</span>
+
+<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/pysheds/sgrid.py:2152,</span> in <span class="ni">sGrid.fill_depressions</span><span class="nt">(self, dem, nodata_out, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2132</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2133</span><span class="sd"> Fill multi-celled depressions in a DEM. Raises depressions to same elevation</span>
+<span class="g g-Whitespace">   </span><span class="mi">2134</span><span class="sd"> as lowest neighbor.</span>
+<span class="sd">   (...)   2149               depressions removed.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2150</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">2151</span> <span class="n">dem_mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_nodata_cells</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2152</span> <span class="n">result</span> <span class="o">=</span> <span class="n">_self</span><span class="o">.</span><span class="n">_priority_flood</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">dem_mask</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2153</span> <span class="n">dem_filled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_handler</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2154</span>                                 <span class="n">viewfinder</span><span class="o">=</span><span class="n">dem</span><span class="o">.</span><span class="n">viewfinder</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2155</span>                                 <span class="n">metadata</span><span class="o">=</span><span class="n">dem</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2156</span>                                 <span class="n">nodata</span><span class="o">=</span><span class="n">dem</span><span class="o">.</span><span class="n">nodata</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2157</span> <span class="k">return</span> <span class="n">dem_filled</span>
+
+<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/pysheds/_sgrid.py:1935,</span> in <span class="ni">pfwrapper.&lt;locals&gt;._wrapper</span><span class="nt">(dem, mask, *args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1927</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1928</span> <span class="k">def</span><span class="w"> </span><span class="nf">_wrapper</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1929</span>     <span class="c1"># Tuple elements:</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1932</span>     <span class="c1"># 2: int64 for row index</span>
+<span class="g g-Whitespace">   </span><span class="mi">1933</span>     <span class="c1"># 3: int64 for col index</span>
+<span class="g g-Whitespace">   </span><span class="mi">1934</span>     <span class="n">tuple_type</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">([</span><span class="n">from_dtype</span><span class="p">(</span><span class="n">dem</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span> <span class="n">int64</span><span class="p">,</span> <span class="n">int64</span><span class="p">,</span> <span class="n">int64</span><span class="p">])</span>
+<span class="ne">-&gt; </span><span class="mi">1935</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">tuple_type</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="ne">SystemError</span>: CPUDispatcher(&lt;function _priority_flood at 0x7fae7b8887c0&gt;) returned a result with an exception set
 </pre></div>
 </div>
 </div>
