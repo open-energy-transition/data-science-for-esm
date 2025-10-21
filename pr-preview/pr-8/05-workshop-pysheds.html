@@ -484,7 +484,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;output_COP30.tif&#39;, &lt;http.client.HTTPMessage at 0x7faef0355df0&gt;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;output_COP30.tif&#39;, &lt;http.client.HTTPMessage at 0x7ff78085a1b0&gt;)
 </pre></div>
 </div>
 </div>
@@ -541,7 +541,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7fae7bab1f40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;cartopy.mpl.feature_artist.FeatureArtist at 0x7ff70d0a54c0&gt;
 </pre></div>
 </div>
 <img alt="_images/261ed0136af383b135491f1a46856b35def8b5e34be7de4eeeff97e76d26b006.png" src="_images/261ed0136af383b135491f1a46856b35def8b5e34be7de4eeeff97e76d26b006.png" />
@@ -567,53 +567,6 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flooded_dem</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fill_depressions</span><span class="p">(</span><span class="n">pit_filled_dem</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/numba/core/serialize.py:30,</span> in <span class="ni">_numba_unpickle</span><span class="nt">(address, bytedata, hashed)</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="n">_unpickled_memo</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">---&gt; </span><span class="mi">30</span> <span class="k">def</span><span class="w"> </span><span class="nf">_numba_unpickle</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">bytedata</span><span class="p">,</span> <span class="n">hashed</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Used by `numba_unpickle` from _helperlib.c</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span><span class="sd">     Parameters</span>
-<span class="sd">   (...)     42         unpickled object</span>
-<span class="g g-Whitespace">     </span><span class="mi">43</span><span class="sd">     &quot;&quot;&quot;</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-
-<span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
-
-<span class="ne">SystemError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">flooded_dem</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">fill_depressions</span><span class="p">(</span><span class="n">pit_filled_dem</span><span class="p">)</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/pysheds/sgrid.py:2152,</span> in <span class="ni">sGrid.fill_depressions</span><span class="nt">(self, dem, nodata_out, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2132</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2133</span><span class="sd"> Fill multi-celled depressions in a DEM. Raises depressions to same elevation</span>
-<span class="g g-Whitespace">   </span><span class="mi">2134</span><span class="sd"> as lowest neighbor.</span>
-<span class="sd">   (...)   2149               depressions removed.</span>
-<span class="g g-Whitespace">   </span><span class="mi">2150</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">2151</span> <span class="n">dem_mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_nodata_cells</span><span class="p">(</span><span class="n">dem</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">2152</span> <span class="n">result</span> <span class="o">=</span> <span class="n">_self</span><span class="o">.</span><span class="n">_priority_flood</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">dem_mask</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2153</span> <span class="n">dem_filled</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output_handler</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2154</span>                                 <span class="n">viewfinder</span><span class="o">=</span><span class="n">dem</span><span class="o">.</span><span class="n">viewfinder</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2155</span>                                 <span class="n">metadata</span><span class="o">=</span><span class="n">dem</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">2156</span>                                 <span class="n">nodata</span><span class="o">=</span><span class="n">dem</span><span class="o">.</span><span class="n">nodata</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2157</span> <span class="k">return</span> <span class="n">dem_filled</span>
-
-<span class="nn">File ~/miniconda3/envs/esm-ws-24-25/lib/python3.12/site-packages/pysheds/_sgrid.py:1935,</span> in <span class="ni">pfwrapper.&lt;locals&gt;._wrapper</span><span class="nt">(dem, mask, *args)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1927</span> <span class="nd">@wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1928</span> <span class="k">def</span><span class="w"> </span><span class="nf">_wrapper</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1929</span>     <span class="c1"># Tuple elements:</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1932</span>     <span class="c1"># 2: int64 for row index</span>
-<span class="g g-Whitespace">   </span><span class="mi">1933</span>     <span class="c1"># 3: int64 for col index</span>
-<span class="g g-Whitespace">   </span><span class="mi">1934</span>     <span class="n">tuple_type</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">([</span><span class="n">from_dtype</span><span class="p">(</span><span class="n">dem</span><span class="o">.</span><span class="n">dtype</span><span class="p">),</span> <span class="n">int64</span><span class="p">,</span> <span class="n">int64</span><span class="p">,</span> <span class="n">int64</span><span class="p">])</span>
-<span class="ne">-&gt; </span><span class="mi">1935</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">dem</span><span class="p">,</span> <span class="n">mask</span><span class="p">,</span> <span class="n">tuple_type</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
-
-<span class="ne">SystemError</span>: CPUDispatcher(&lt;function _priority_flood at 0x7fae7b8887c0&gt;) returned a result with an exception set
 </pre></div>
 </div>
 </div>
@@ -657,12 +610,23 @@ neighboring cells based on the direction of steepest descent:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Raster([ -2,  -1,   0,   1,   2,   4,   8,  16,  32,  64, 128])
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">flowdir</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">extent</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;cividis&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7ff6f2df4920&gt;
+</pre></div>
+</div>
+<img alt="_images/bb6afa288364a9cbc4569183fc83a85338af9e2be4e23bf1fa491316a650545f.png" src="_images/bb6afa288364a9cbc4569183fc83a85338af9e2be4e23bf1fa491316a650545f.png" />
 </div>
 </div>
 </section>
@@ -689,6 +653,12 @@ neighboring cells based on the direction of steepest descent:</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Upstream Cells&quot;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;horizontal&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ff6f2fc2de0&gt;
+</pre></div>
+</div>
+<img alt="_images/9fe8d724cf91a4a496e2138b8beee09604feeb2d7ca9c3d5607090a69235bdb4.png" src="_images/9fe8d724cf91a4a496e2138b8beee09604feeb2d7ca9c3d5607090a69235bdb4.png" />
 </div>
 </div>
 </section>
@@ -762,6 +732,12 @@ neighboring cells based on the direction of steepest descent:</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">x_snap</span><span class="p">],</span> <span class="p">[</span><span class="n">y_snap</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff6f2cd4620&gt;
+</pre></div>
+</div>
+<img alt="_images/f89cc6a0e085d95eb4e486305a8479ac2d4084dd824a8e9fc62502e9ab01e9cc.png" src="_images/f89cc6a0e085d95eb4e486305a8479ac2d4084dd824a8e9fc62502e9ab01e9cc.png" />
 </div>
 </div>
 </section>
