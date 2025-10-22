@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!--
-    this give us a css class that will be invisible only if js is disabled
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="Introduction to Python" href="01-workshop-python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,17 +157,21 @@
     
     
     <img src="_static/logo_merged.png" class="logo__image only-light" alt="Data Science for Energy System Modelling - Home"/>
-    <img src="_static/logo_merged.png" class="logo__image only-dark pst-js-only" alt="Data Science for Energy System Modelling - Home"/>
+    <script>document.write(`<img src="_static/logo_merged.png" class="logo__image only-dark" alt="Data Science for Energy System Modelling - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -196,14 +207,9 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
-      <div class="sidebar-primary-item">
-<div id="ethical-ad-placement"
-      class="flat"
-      data-ea-publisher="readthedocs"
-      data-ea-type="readthedocs-sidebar"
-      data-ea-manual="true">
-</div></div>
   </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -378,16 +384,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -638,11 +652,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.83427183, 0.45124158],
-       [0.00585917, 0.03019794],
-       [0.68167755, 0.68964985],
-       [0.75481001, 0.51790066],
-       [0.80528545, 0.99727187]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.43200632, 0.85268106],
+       [0.84116267, 0.54275246],
+       [0.99681724, 0.64660243],
+       [0.97448246, 0.27590138],
+       [0.37117756, 0.7714379 ]])
 </pre></div>
 </div>
 </div>
@@ -828,7 +842,7 @@ It takes two arrays representing x and y values and creates two 2D grids: one fo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6c16a6f2637dfb4f96853c90e9b73c317aa42457bc5d46c13a26e3b2fec1af0a.png" src="_images/6c16a6f2637dfb4f96853c90e9b73c317aa42457bc5d46c13a26e3b2fec1af0a.png" />
+<img alt="_images/9bccf882e8150d2fa1ad39898a6dcc08e9f811da883dd909beb97dad11fe7fbf.png" src="_images/9bccf882e8150d2fa1ad39898a6dcc08e9f811da883dd909beb97dad11fe7fbf.png" />
 </div>
 </div>
 <p>There are many ways to visualize 2D data.
@@ -840,7 +854,7 @@ He we use <code class="docutils literal notranslate"><span class="pre">pcolormes
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/48ca3aa98966c2069e1aa100938f36ecbf0df2d8675c03726aa7b5dca936d9d6.png" src="_images/48ca3aa98966c2069e1aa100938f36ecbf0df2d8675c03726aa7b5dca936d9d6.png" />
+<img alt="_images/f39490ba05af8d5c1284fe612364f0d7e81f03e7abd94b8cb1b8a7347fce35bb.png" src="_images/f39490ba05af8d5c1284fe612364f0d7e81f03e7abd94b8cb1b8a7347fce35bb.png" />
 </div>
 </div>
 </section>
@@ -864,10 +878,10 @@ He we use <code class="docutils literal notranslate"><span class="pre">pcolormes
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f1a87fc0bd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f4d8494c650&gt;
 </pre></div>
 </div>
-<img alt="_images/80b9fff0cb274566b8e3d3590907d18a28d5d970ab43332a743070cc0f847b15.png" src="_images/80b9fff0cb274566b8e3d3590907d18a28d5d970ab43332a743070cc0f847b15.png" />
+<img alt="_images/8c940022d1d5055224bc15ce463ecd8cc69474dae923676dd7edd7115e5d2b05.png" src="_images/8c940022d1d5055224bc15ce463ecd8cc69474dae923676dd7edd7115e5d2b05.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -947,10 +961,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f1a9002cb90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f4d7020d190&gt;
 </pre></div>
 </div>
-<img alt="_images/b46593f18e4cbb445af2aa985f6e7fdc065b5608a909e80250315da28b6ce24c.png" src="_images/b46593f18e4cbb445af2aa985f6e7fdc065b5608a909e80250315da28b6ce24c.png" />
+<img alt="_images/1f19a6d5da9a6904758a3e92bb162ddd4faf9f2c7e103e12b4224ad66ea82497.png" src="_images/1f19a6d5da9a6904758a3e92bb162ddd4faf9f2c7e103e12b4224ad66ea82497.png" />
 </div>
 </div>
 </section>
@@ -1045,10 +1059,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a85d13310&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d7014fe90&gt;]
 </pre></div>
 </div>
-<img alt="_images/38e0066018458310c212b110727f176594005fa0ad08c416a93586e857e724c8.png" src="_images/38e0066018458310c212b110727f176594005fa0ad08c416a93586e857e724c8.png" />
+<img alt="_images/7f02f38ae8ce7845cea9cef054d0fd9b3398e107e35ac65c829759f73eff7ddc.png" src="_images/7f02f38ae8ce7845cea9cef054d0fd9b3398e107e35ac65c829759f73eff7ddc.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1058,10 +1072,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a85d7b550&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d7010c620&gt;]
 </pre></div>
 </div>
-<img alt="_images/ffd3dc4b62cd3506bd30586dd070efe44d7d2d6c9b96215cd75c7af26a501be7.png" src="_images/ffd3dc4b62cd3506bd30586dd070efe44d7d2d6c9b96215cd75c7af26a501be7.png" />
+<img alt="_images/365af1d03b3810af712bd5184f4d968b0ab4d9ef746fc005a9935189796b4d55.png" src="_images/365af1d03b3810af712bd5184f4d968b0ab4d9ef746fc005a9935189796b4d55.png" />
 </div>
 </div>
 </section>
@@ -1100,7 +1114,7 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8bca872709ac2b0f25d92a4a17e6f88f8c26e62fd976798443d98310b3ed3224.png" src="_images/8bca872709ac2b0f25d92a4a17e6f88f8c26e62fd976798443d98310b3ed3224.png" />
+<img alt="_images/80956c5781a4fd4d9896484db4167d8e7250e1ee0e29362903445b7d9b336a73.png" src="_images/80956c5781a4fd4d9896484db4167d8e7250e1ee0e29362903445b7d9b336a73.png" />
 </div>
 </div>
 <section id="subplots">
@@ -1113,7 +1127,7 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9e13561b06f5d2c575e2e9d0ab28f3ca3efd7ae4d5738c0cd619a55149090489.png" src="_images/9e13561b06f5d2c575e2e9d0ab28f3ca3efd7ae4d5738c0cd619a55149090489.png" />
+<img alt="_images/548ca55e802a1d44faa21d28eaccfe90968b6ff0b6f13e6d2bb9b2c3850c4877.png" src="_images/548ca55e802a1d44faa21d28eaccfe90968b6ff0b6f13e6d2bb9b2c3850c4877.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1135,7 +1149,7 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/851b990779cdb6eee326ec4afebe14ab1ece59045c52c3d2c1608ab3212c47dd.png" src="_images/851b990779cdb6eee326ec4afebe14ab1ece59045c52c3d2c1608ab3212c47dd.png" />
+<img alt="_images/455349b62a88da036618df9e1058217f679f1839e12fddf8ef100e629962e93b.png" src="_images/455349b62a88da036618df9e1058217f679f1839e12fddf8ef100e629962e93b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1175,10 +1189,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a85dfa790&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d5ce776e0&gt;]
 </pre></div>
 </div>
-<img alt="_images/db3db9ea422842a926d9652d0f9b87c5e5aad225c18841732ba5e57d8f0b9ea9.png" src="_images/db3db9ea422842a926d9652d0f9b87c5e5aad225c18841732ba5e57d8f0b9ea9.png" />
+<img alt="_images/583192156234740e2fae8c588aac88b3eca7b5bd6179f36bc1799ddd177d18a2.png" src="_images/583192156234740e2fae8c588aac88b3eca7b5bd6179f36bc1799ddd177d18a2.png" />
 </div>
 </div>
 <p>This does the same thing as</p>
@@ -1189,10 +1203,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a84979710&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d5cef2f00&gt;]
 </pre></div>
 </div>
-<img alt="_images/db3db9ea422842a926d9652d0f9b87c5e5aad225c18841732ba5e57d8f0b9ea9.png" src="_images/db3db9ea422842a926d9652d0f9b87c5e5aad225c18841732ba5e57d8f0b9ea9.png" />
+<img alt="_images/583192156234740e2fae8c588aac88b3eca7b5bd6179f36bc1799ddd177d18a2.png" src="_images/583192156234740e2fae8c588aac88b3eca7b5bd6179f36bc1799ddd177d18a2.png" />
 </div>
 </div>
 <p>This starts to matter when we have multiple axes to manage.</p>
@@ -1206,10 +1220,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a87fc1e90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d5cd9acc0&gt;]
 </pre></div>
 </div>
-<img alt="_images/2cb5896f279d2448236869e762009e2589d50fce3e582edead65912555fe2d44.png" src="_images/2cb5896f279d2448236869e762009e2589d50fce3e582edead65912555fe2d44.png" />
+<img alt="_images/cae769ff97fcd6e20f7ecfa7bcca442562e9d83b0d4633cba951e051503b7a02.png" src="_images/cae769ff97fcd6e20f7ecfa7bcca442562e9d83b0d4633cba951e051503b7a02.png" />
 </div>
 </div>
 </section>
@@ -1231,7 +1245,7 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c95be4a9e39e7cfb7a6fb9eaf58a0a004e48319ae116ae0fae7ff389498b394d.png" src="_images/c95be4a9e39e7cfb7a6fb9eaf58a0a004e48319ae116ae0fae7ff389498b394d.png" />
+<img alt="_images/a5e197423146adcaadab236168d40d54b2ddcf024196fe882519d1de12cbc0e1.png" src="_images/a5e197423146adcaadab236168d40d54b2ddcf024196fe882519d1de12cbc0e1.png" />
 </div>
 </div>
 </section>
@@ -1245,11 +1259,11 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a84586910&gt;,
- &lt;matplotlib.lines.Line2D at 0x7f1a84555410&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d5ccb6270&gt;,
+ &lt;matplotlib.lines.Line2D at 0x7f4d5ccb6240&gt;]
 </pre></div>
 </div>
-<img alt="_images/7157c9ecb9ed95a8840266ff53bf42160b891b6f9337af0b92a1c2baa6e0408a.png" src="_images/7157c9ecb9ed95a8840266ff53bf42160b891b6f9337af0b92a1c2baa6e0408a.png" />
+<img alt="_images/02af75747606457cfe889c64d4ae1ede765839f6133b6e3ca51a7ab14e6ea60f.png" src="_images/02af75747606457cfe889c64d4ae1ede765839f6133b6e3ca51a7ab14e6ea60f.png" />
 </div>
 </div>
 <p>It’s simple to switch axes</p>
@@ -1261,11 +1275,11 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a845f2f10&gt;,
- &lt;matplotlib.lines.Line2D at 0x7f1a844074d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d5cb31e50&gt;,
+ &lt;matplotlib.lines.Line2D at 0x7f4d5cb31e80&gt;]
 </pre></div>
 </div>
-<img alt="_images/efcfa8b7611b5d9178e68c2586dd228d929c2f0bafcbcc7a63d9331e2e69f90c.png" src="_images/efcfa8b7611b5d9178e68c2586dd228d929c2f0bafcbcc7a63d9331e2e69f90c.png" />
+<img alt="_images/8b2a01fb36c3e83d5a9966a9cb98ae47ddb5f9ef899d527c410446c55db4e16b.png" src="_images/8b2a01fb36c3e83d5a9966a9cb98ae47ddb5f9ef899d527c410446c55db4e16b.png" />
 </div>
 </div>
 <section id="line-styles">
@@ -1279,10 +1293,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a844d27d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d5cc61430&gt;]
 </pre></div>
 </div>
-<img alt="_images/9ab503c6bc7c9c162bdad176920b81c9d7d0b1122b6e24dc8dfb97d62d2821b4.png" src="_images/9ab503c6bc7c9c162bdad176920b81c9d7d0b1122b6e24dc8dfb97d62d2821b4.png" />
+<img alt="_images/cd407f514eb83c3fab37432a61ec37d6f1e9dafead5944c3cca2dfb552705de4.png" src="_images/cd407f514eb83c3fab37432a61ec37d6f1e9dafead5944c3cca2dfb552705de4.png" />
 </div>
 </div>
 </section>
@@ -1298,10 +1312,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a84357190&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d5cf56f60&gt;]
 </pre></div>
 </div>
-<img alt="_images/d0eb2738066ea7eb22a228ec12ee986cfa1ed7cd337fb352b98eb1129a6458b8.png" src="_images/d0eb2738066ea7eb22a228ec12ee986cfa1ed7cd337fb352b98eb1129a6458b8.png" />
+<img alt="_images/75a0ebc377ba12ae167565c1e6709fa164b8c73ec32e8d81f00777c2da70dbdc.png" src="_images/75a0ebc377ba12ae167565c1e6709fa164b8c73ec32e8d81f00777c2da70dbdc.png" />
 </div>
 </div>
 </section>
@@ -1317,10 +1331,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1a843d5450&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4d701d4950&gt;]
 </pre></div>
 </div>
-<img alt="_images/0073d511e649d6d5d5acca463e0a00cafcfadbbe5fdb1b84c463ddffb1660102.png" src="_images/0073d511e649d6d5d5acca463e0a00cafcfadbbe5fdb1b84c463ddffb1660102.png" />
+<img alt="_images/d3a4c8f30383ccdc008e1bef79711b47ecd668af28fa912142508c0e34885b12.png" src="_images/d3a4c8f30383ccdc008e1bef79711b47ecd668af28fa912142508c0e34885b12.png" />
 </div>
 </div>
 </section>
@@ -1339,7 +1353,7 @@ If the last two dimensions have the same length, then the two arrays can be broa
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-3.0, 3.0)
 </pre></div>
 </div>
-<img alt="_images/cbb644a6b0b81247e30707498f13866996d5ce9ca968f64043b9c8bb503443ca.png" src="_images/cbb644a6b0b81247e30707498f13866996d5ce9ca968f64043b9c8bb503443ca.png" />
+<img alt="_images/8b9167c25ddbab14c3c17a70dd48fbd98f9866753f7c15e388c15fe35cbcced9.png" src="_images/8b9167c25ddbab14c3c17a70dd48fbd98f9866753f7c15e388c15fe35cbcced9.png" />
 </div>
 </div>
 </section>
@@ -1356,10 +1370,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f1a8427be10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7f4d5cb7fef0&gt;
 </pre></div>
 </div>
-<img alt="_images/a0b3276f7cd85b4a5d00bea154c34b640e49d49dcba9036909a169003f32141a.png" src="_images/a0b3276f7cd85b4a5d00bea154c34b640e49d49dcba9036909a169003f32141a.png" />
+<img alt="_images/4481dd1a1d96b44318fb210c27264c53b85634ebe5db5ada26c4a167bb42e95e.png" src="_images/4481dd1a1d96b44318fb210c27264c53b85634ebe5db5ada26c4a167bb42e95e.png" />
 </div>
 </div>
 <p>There are many different colormaps available in matplotlib: <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">https://matplotlib.org/stable/tutorials/colors/colormaps.html</a></p>
@@ -1381,7 +1395,7 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b458203dd1554980b5dd249a3d14a7480b98420c0c13ef56e9654280de17e43f.png" src="_images/b458203dd1554980b5dd249a3d14a7480b98420c0c13ef56e9654280de17e43f.png" />
+<img alt="_images/78e4391b5e844aa9b9806c8c1b01a3b9714f18d09607e31985eb77d9c3214100.png" src="_images/78e4391b5e844aa9b9806c8c1b01a3b9714f18d09607e31985eb77d9c3214100.png" />
 </div>
 </div>
 </section>
@@ -1389,10 +1403,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p>Import <code class="docutils literal notranslate"><span class="pre">numpy</span></code> under the alias <code class="docutils literal notranslate"><span class="pre">np</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -1410,10 +1424,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 <li><p>Create a 5 x 5 matrix of ones with a dtype <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p></li>
 </ol>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -1428,10 +1442,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </details>
 </div>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1446,10 +1460,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </details>
 </div>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
@@ -1464,10 +1478,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </details>
 </div>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
@@ -1483,10 +1497,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </details>
 </div>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
@@ -1506,10 +1520,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 <p>Create a 3D matrix of 3 x 3 x 3 full of random numbers drawn from a standard normal distribution (hint: <a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.randn.html"><code class="docutils literal notranslate"><span class="pre">np.random.randn()</span></code></a>)</p>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -1517,17 +1531,17 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[ 0.26189083,  0.19413472, -1.07824581],
-        [-2.14478868,  0.38420974,  0.81708473],
-        [ 0.18058283, -0.72108671, -2.44733053]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[-0.80301396,  2.32558977, -0.69467173],
+        [-0.29269546, -0.38877008,  0.56038156],
+        [-0.5424952 ,  0.04746935,  0.38352243]],
 
-       [[-0.48246541,  1.40616717, -0.49166755],
-        [ 0.23785296,  1.82563608,  1.2834227 ],
-        [-0.97641777, -1.55187505, -0.96254946]],
+       [[ 0.82543082, -0.66061396, -0.26337974],
+        [-1.12733301,  0.84691229,  0.84915133],
+        [ 0.18106716,  0.17035346, -0.8062263 ]],
 
-       [[ 0.40072428,  1.13712534,  1.25952853],
-        [ 1.46813007,  0.07679021, -0.14332638],
-        [-0.93646173,  0.5727872 ,  0.77684004]]])
+       [[ 1.36947553,  2.09363678, -0.12831783],
+        [-0.49956667,  1.34928408, -0.32185737],
+        [ 0.94074086,  1.38690849, -0.83234042]]])
 </pre></div>
 </div>
 </div>
@@ -1535,10 +1549,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 <p>Create an array of 20 linearly spaced numbers between 1 and 10.</p>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -1557,10 +1571,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 <p>Below I’ve defined an array of shape 4 x 4. Use indexing to procude the given outputs.</p>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
@@ -1580,10 +1594,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </details>
 </div>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">3</span><span class="p">:]</span>
@@ -1607,10 +1621,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </pre></div>
 </div>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -1628,10 +1642,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </pre></div>
 </div>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
@@ -1651,10 +1665,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </pre></div>
 </div>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
@@ -1675,10 +1689,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 <p>Calculate the sum of all the numbers in <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -1694,10 +1708,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 <p>Calculate the sum of each row in <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1712,10 +1726,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </details>
 </div>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1731,10 +1745,10 @@ If the last two dimensions have the same length, then the two arrays can be broa
 </div>
 <p>Extract all values of <code class="docutils literal notranslate"><span class="pre">a</span></code> greater than the mean of <code class="docutils literal notranslate"><span class="pre">a</span></code> (hint: use a boolean mask).</p>
 <div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
+<details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
+<p class="collapsed admonition-title">Show code cell content</p>
+<p class="expanded admonition-title">Hide code cell content</p>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">mean</span><span class="p">()]</span>
@@ -1806,8 +1820,7 @@ If the last two dimensions have the same length, then the two arrays can be broa
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1891,8 +1904,8 @@ By Fabian Neumann & Open Energy Transition
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
